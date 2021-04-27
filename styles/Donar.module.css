@@ -1,0 +1,102 @@
+.container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -ms-grid-rows: auto 85px auto 85px auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        'title'
+        'donate-button'
+        'first-description';
+    gap: 85px;
+    width: 100%;
+    padding: 10px;
+    z-index: 2;
+}
+
+.title_container {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    margin: 30px;
+    grid-area: title;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #fff;
+}
+
+.title_container > span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2.4em;
+    font-weight: 500;
+    text-align: center;
+}
+
+.title_container > hr {
+    color: #fff;
+    margin-top: 17px;
+    width: 100%;
+    max-width: 380px;
+    background-color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+.donar_container {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: donate-button;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.description_container {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    font-family: 'Quicksand', sans-serif;
+    grid-area: first-description;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.description_container > p {
+    color: #fff;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    font-size: 1.05em;
+    margin: 12px;
+    -webkit-filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.1));
+}
+
+@media only screen and (max-width: 425px) {
+    .container {
+        gap: 70px;
+    }
+    .title_container > hr {
+        max-width: 190px;
+    }
+}

@@ -1,0 +1,97 @@
+.container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 20px 30px;
+    height: 100%;
+}
+
+.container img {
+    width: 350px;
+    margin-bottom: 30px;
+}
+
+.sections_container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: auto 25px auto;
+    grid-template-areas:
+        'our-story  our-location'
+        'what-wedo  our-location';
+    -ms-grid-columns: auto 25px 1fr;
+    grid-template-columns: auto 1fr;
+    gap: 25px;
+    width: 100%;
+}
+
+.our_story {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: our-story;
+}
+
+.what_wedo {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: what-wedo;
+}
+
+.our_location {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 3;
+    grid-area: our-location;
+}
+
+.our_location > div {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+}
+
+@media only screen and (max-width: 950px) {
+    .sections_container {
+        grid-template-areas:
+            'our-story      our-story'
+            'what-wedo      what-wedo'
+            'our-location   our-location';
+        gap: 20px;
+    }
+
+    .our_location iframe {
+        width: 100%;
+    }
+    .our_story {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 3;
+    }
+    .what_wedo {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 3;
+    }
+    .our_location {
+        -ms-grid-row: 5;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 3;
+    }
+}
+
+@media only screen and (max-width: 426px) {
+    .container img {
+        width: 100%;
+    }
+}
