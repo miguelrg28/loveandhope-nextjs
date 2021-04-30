@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import axios from 'axios'
 import { useState } from 'react'
 import styles from '../styles/Contact.module.css'
@@ -53,9 +52,6 @@ export default function Contact() {
 
     return (
         <div className={styles.container}>
-            <Head>
-                <title>Contactanos</title>
-            </Head>
             <form className={styles.form_container} onSubmit={handleSubmit}>
                 <span className={styles.title}>Contactanos</span>
                 <p className="error_text">{ErrorText}</p>

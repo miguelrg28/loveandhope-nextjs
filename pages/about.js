@@ -1,13 +1,9 @@
-import Head from 'next/head'
 import TextSection from '@/components/TextSection'
 import styles from '../styles/About.module.css'
 
 export default function About() {
     return (
         <div className={styles.container}>
-            <Head>
-                <title>Escuela Amor y Esperanza - Acerca de</title>
-            </Head>
             <img src="/logo.jpg" alt="Logo" />
             <div className={styles.sections_container}>
                 <TextSection

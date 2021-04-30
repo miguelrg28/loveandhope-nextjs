@@ -5,6 +5,11 @@
 * Browsers: last 4 version
 */
 
+.background {
+    background-image: url('/background2.jpg');
+    background-position: center;
+}
+
 .container {
     display: -ms-grid;
     display: grid;
@@ -99,6 +104,7 @@
     max-width: 500px;
     text-align: center;
     font-size: 1em;
+    line-height: 1.5;
     margin: 12px;
     -webkit-filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.1));
     filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.1));

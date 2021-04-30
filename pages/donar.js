@@ -1,15 +1,10 @@
-import Head from 'next/head'
 import styles from '../styles/Donar.module.css'
 
 export default function Donar() {
     return (
-        <div className="background">
+        <div className={`background ${styles.background}`}>
             <div className="background_blur">
                 <div className={styles.container}>
-                    <Head>
-                        <title>Donaciones</title>
-                    </Head>
-
                     <div className={styles.title_container}>
                         <span>Aporta para un mejor futuro</span>
                         <hr />
@@ -28,9 +23,10 @@ export default function Donar() {
 
                     <div className={styles.description_container}>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-                            dapibus, leo eu maximus placerat, felis velit vestibulum mauris, non
-                            hendrerit mi neque eu est.
+                            Tenemos como objetivo que nuestros niños, niñas y jovenes consigan una
+                            mejor calidad de vida, con dignidad, aceptación e integración social.
+                            Desarrollando al máximo sus capacidades físicas, educativas y
+                            emocionales.
                         </p>
                     </div>
                 </div>

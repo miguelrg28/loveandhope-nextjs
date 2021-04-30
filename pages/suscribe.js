@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import { useState } from 'react'
 import { ErrorMessages } from '../utils/data'
 import axios from 'axios'
@@ -34,10 +33,7 @@ export default function Suscribe() {
 
     return (
         <>
-            <Head>
-                <title>Suscribirse</title>
-            </Head>
-            <div className="background">
+            <div className={`background ${styles.background}`}>
                 <div className="background_blur">
                     <form className={styles.container} onSubmit={handleSubmit}>
                         <div className={styles.title_container}>
