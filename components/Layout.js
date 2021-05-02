@@ -12,6 +12,11 @@ const Layout = ({ children }) => (
                 />
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+                    rel="stylesheet"
+                />
                 <link
                     href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
                     rel="stylesheet"
