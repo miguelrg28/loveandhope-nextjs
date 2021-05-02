@@ -17,8 +17,7 @@ const handler = nc().post(async (req, res) => {
 
         res.json({ status: 1, message: 'Suscrito con éxito' })
     } catch (err) {
-        console.log(err)
-        return res.status(500).send({ sucess: false })
+        return res.status(500).send({ success: false })
     }
 })
 

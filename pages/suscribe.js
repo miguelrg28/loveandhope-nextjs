@@ -28,6 +28,10 @@ export default function Suscribe() {
             }
         } catch (err) {
             console.log('Failed')
+            if (err?.response?.data.success === false) {
+                setSucceed(false)
+                return setError(ErrorMessages.emailDuplicated)
+            }
         }
     }
 
@@ -38,13 +42,13 @@ export default function Suscribe() {
                     <form className={styles.container} onSubmit={handleSubmit}>
                         <div className={styles.title_container}>
                             <span>
-                                {succeed
+                                {succeed.succeed
                                     ? '¡Se ha suscrito con éxito!'
                                     : 'Suscribirse para recibir más información'}
                             </span>
                         </div>
 
-                        {!succeed && (
+                        {!succeed.succeed && (
                             <>
                                 <div
                                     className={styles.suscribirse_container}

@@ -121,7 +121,7 @@ input[type='text']:focus {
     -o-transition: 0.3s;
     transition: 0.3s;
     margin-bottom: 15px;
-    color: #d32f2f;
+    color: #ec3030;
     font-size: 0.85em;
     font-weight: 500;
 }

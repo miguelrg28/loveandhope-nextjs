@@ -29,6 +29,7 @@ export const FooterInfo = {
 }
 
 export const ErrorMessages = {
-    invalidMail: 'Email inválido',
+    invalidMail: 'Correo electrónico inválido',
     emptyFields: 'Debe rellenar los campos',
+    emailDuplicated: 'Este correo electrónico ya está suscrito',
 }
