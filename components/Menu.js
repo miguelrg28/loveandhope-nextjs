@@ -15,7 +15,7 @@ const Menu = () => {
                     <Link href="/">
                         <button>Inicio</button>
                     </Link>
-                    <Link href="/donar">
+                    <Link href="/donate">
                         <button>Donar</button>
                     </Link>
                     <Link href="/contact">

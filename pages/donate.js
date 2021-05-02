@@ -1,6 +1,6 @@
 import styles from '../styles/Donar.module.css'
 
-export default function Donar() {
+export default function Donate() {
     return (
         <div className={`background ${styles.background}`}>
             <div className="background_blur">
