@@ -42,15 +42,16 @@ export default function Suscribe() {
                     <form className={styles.container} onSubmit={handleSubmit}>
                         <div className={styles.title_container}>
                             <span>
-                                {succeed.succeed
+                                {/*succeed.succeed
                                     ? '¡Se ha suscrito con éxito!'
-                                    : 'Suscribirse para recibir más información'}
+                                : 'Suscribirse para recibir más información'*/}
+                                Función deshabilitada temporalmente
                             </span>
                         </div>
 
                         {!succeed.succeed && (
                             <>
-                                <div
+                                {/*<form
                                     className={styles.suscribirse_container}
                                     onSubmit={handleSubmit}
                                 >
@@ -62,8 +63,8 @@ export default function Suscribe() {
                                         onChange={(e) => setEmail(e.target.value)}
                                         value={email_form}
                                     />
-                                    <button className="button-form">Suscribirse</button>
-                                </div>
+                        <button className="button-form">Suscribirse</button>
+                                </form>*/}
 
                                 <div className={styles.description_container}>
                                     <p>
