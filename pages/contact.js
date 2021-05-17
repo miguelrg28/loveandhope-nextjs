@@ -1,7 +1,9 @@
 import axios from 'axios'
 import { useState } from 'react'
 import styles from '../styles/Contact.module.css'
-import { ErrorMessages } from '../utils/data'
+import ContactCard from '../components/ContactCard'
+import { ErrorMessages, SocialMedia } from '../utils/data'
+import { AiOutlinePhone } from 'react-icons/ai'
 
 export default function Contact() {
     const [FormData, setFormData] = useState({
@@ -54,7 +56,23 @@ export default function Contact() {
         <div className={styles.container}>
             <form className={styles.form_container} onSubmit={handleSubmit}>
                 <span className={styles.title}>Contactanos</span>
-                <p className="error_text">{ErrorText}</p>
+                <ContactCard
+                    rotate
+                    icon={<AiOutlinePhone />}
+                    title="Teléfono"
+                    description="+1 809 612 2712"
+                    url="tel:+18096122712"
+                />
+                {SocialMedia.map((social) => (
+                    <ContactCard
+                        icon={social.icon}
+                        title={social.name}
+                        description={social.text}
+                        url={social.url}
+                    />
+                ))}
+
+                {/*<p className="error_text">{ErrorText}</p>
                 <input
                     type="text"
                     placeholder="Nombre"
@@ -80,7 +98,7 @@ export default function Contact() {
                     onChange={handleChange}
                     value={FormData.message}
                 ></textarea>
-                <button className="button-form">Enviar</button>
+    <button className="button-form">Enviar</button>*/}
             </form>
         </div>
     )

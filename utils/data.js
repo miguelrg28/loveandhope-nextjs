@@ -7,18 +7,21 @@ export const SocialMedia = [
         name: 'Instagram',
         icon: <AiOutlineInstagram />,
         url: 'https://www.instagram.com/henuevaesperanzard/',
+        text: '@henuevaesperanzard',
     },
     {
         id: 1,
         name: 'Facebook',
         icon: <AiOutlineFacebook />,
         url: 'https://www.facebook.com/henuevaesperanzard',
+        text: 'Henuevaesperanzard',
     },
     {
         id: 2,
         name: 'Email',
         icon: <AiOutlineMail />,
         url: 'mailto: hnuevaesperanza@gmail.com',
+        text: 'hnuevaesperanza@gmail.com',
     },
 ]
 
