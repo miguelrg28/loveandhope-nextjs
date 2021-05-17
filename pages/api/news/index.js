@@ -35,7 +35,7 @@ const handler = nc()
             res.status(201).json({ success: true, savedNews })
 
             //Content for email
-            let content = `<div class="container" style="display: block;margin: 8px;">
+            /*let content = `<div class="container" style="display: block;margin: 8px;">
             <table style="border: 2.5px solid #f1f1f1;font-family: Montserrat, 'sans-serif';width: 100%;padding: 10px;">
                 <tr>
                     <td class="img-container" style="display: block;text-align: center;">
@@ -83,7 +83,7 @@ const handler = nc()
                         }
                     }
                 )
-            }
+            }*/
         } catch (err) {
             console.log(err)
             res.status(400).json({ success: false })

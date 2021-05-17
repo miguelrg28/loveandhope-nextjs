@@ -51,7 +51,7 @@ export default function Suscribe() {
 
                         {!succeed.succeed && (
                             <>
-                                {/*<form
+                                <form
                                     className={styles.suscribirse_container}
                                     onSubmit={handleSubmit}
                                 >
@@ -63,8 +63,8 @@ export default function Suscribe() {
                                         onChange={(e) => setEmail(e.target.value)}
                                         value={email_form}
                                     />
-                        <button className="button-form">Suscribirse</button>
-                                </form>*/}
+                                    <button className="button-form">Suscribirse</button>
+                                </form>
 
                                 <div className={styles.description_container}>
                                     <p>

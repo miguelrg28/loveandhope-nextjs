@@ -18,9 +18,9 @@ const Menu = () => {
                     <Link href="/donate">
                         <button>Donar</button>
                     </Link>
-                    <Link href="/contact">
+                    {/*<Link href="/contact">
                         <button>Contactanos</button>
-                    </Link>
+    </Link>*/}
                     <Link href="/about">
                         <button>Acerca de</button>
                     </Link>
