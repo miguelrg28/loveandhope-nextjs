@@ -57,7 +57,7 @@ export default function Contact() {
             <form className={styles.form_container} onSubmit={handleSubmit}>
                 <span className={styles.title}>Contactanos</span>
                 <ContactCard
-                    rotate
+                    rotaten
                     icon={<AiOutlinePhone />}
                     title="Teléfono"
                     description="+1 809 612 2712"
