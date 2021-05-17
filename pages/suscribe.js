@@ -42,10 +42,9 @@ export default function Suscribe() {
                     <form className={styles.container} onSubmit={handleSubmit}>
                         <div className={styles.title_container}>
                             <span>
-                                {/*succeed.succeed
+                                {succeed.succeed
                                     ? '¡Se ha suscrito con éxito!'
-                                : 'Suscribirse para recibir más información'*/}
-                                Función deshabilitada temporalmente
+                                    : 'Suscribirse para recibir más información'}
                             </span>
                         </div>
 
