@@ -45,16 +45,16 @@ export default function Contact() {
         }
     }
 
-    const handleChange = async (e) => {
+    /*const handleChange = async (e) => {
         setFormData({
             ...FormData,
             [e.target.name]: e.target.value,
         })
-    }
+    }*/
 
     return (
         <div className={styles.container}>
-            <form className={styles.form_container} onSubmit={handleSubmit}>
+            <div className={styles.form_container}>
                 <span className={styles.title}>Contactanos</span>
                 <ContactCard
                     rotate
@@ -63,16 +63,18 @@ export default function Contact() {
                     description="+1 809 612 2712"
                     url="tel:+18096122712"
                 />
-                {SocialMedia.map((social) => (
+                {SocialMedia.map((social, i) => (
                     <ContactCard
+                        key={i}
                         icon={social.icon}
                         title={social.name}
                         description={social.text}
                         url={social.url}
                     />
                 ))}
+            </div>
 
-                {/*<p className="error_text">{ErrorText}</p>
+            {/*<p className="error_text">{ErrorText}</p>
                 <input
                     type="text"
                     placeholder="Nombre"
@@ -99,7 +101,6 @@ export default function Contact() {
                     value={FormData.message}
                 ></textarea>
     <button className="button-form">Enviar</button>*/}
-            </form>
         </div>
     )
 }

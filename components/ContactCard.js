@@ -24,7 +24,7 @@ const ContactCard = ({ icon, title, description, url, rotate }) => (
             }
 
             .card:active {
-                background: rgb(24, 24, 24, 0.2);
+                background-color: rgb(24, 24, 24, 0.2);
             }
 
             .card > div {
@@ -56,6 +56,19 @@ const ContactCard = ({ icon, title, description, url, rotate }) => (
                 color: #4d4d4d;
                 font-size: 0.9em;
                 width: 100%;
+            }
+
+            @media (hover: none) {
+                .card {
+                    cursor: none;
+                }
+                .card:hover {
+                    background-color: #f6f6f6;
+                }
+
+                .card:active {
+                    background-color: rgb(24, 24, 24, 0.2);
+                }
             }
         `}</style>
     </>
