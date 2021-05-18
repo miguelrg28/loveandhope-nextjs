@@ -79,7 +79,7 @@
     max-width: 325px;
 }
 
-.suscribirse_container > button {
+.suscribirse_container > input[type='submit'] {
     padding: 14px;
     margin-top: 20px;
     font-size: 0.9em;

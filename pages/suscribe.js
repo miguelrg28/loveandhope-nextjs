@@ -23,8 +23,9 @@ export default function Suscribe() {
 
         try {
             const res = await axios.post('/api/suscribe', { email: email_form })
-            if (res.data.status === 1) {
-                setSucceed(true)
+            if (res.status === 200) {
+                console.log('asdsad')
+                return setSucceed(true)
             }
         } catch (err) {
             console.log('Failed')
@@ -42,18 +43,15 @@ export default function Suscribe() {
                     <form className={styles.container} onSubmit={handleSubmit}>
                         <div className={styles.title_container}>
                             <span>
-                                {succeed.succeed
+                                {succeed
                                     ? '¡Se ha suscrito con éxito!'
                                     : 'Suscribirse para recibir más información'}
                             </span>
                         </div>
 
-                        {!succeed.succeed && (
+                        {!succeed && (
                             <>
-                                <form
-                                    className={styles.suscribirse_container}
-                                    onSubmit={handleSubmit}
-                                >
+                                <div className={styles.suscribirse_container}>
                                     <p className="error_text">{ErrorText}</p>
                                     <input
                                         type="text"
@@ -62,8 +60,12 @@ export default function Suscribe() {
                                         onChange={(e) => setEmail(e.target.value)}
                                         value={email_form}
                                     />
-                                    <button className="button-form">Suscribirse</button>
-                                </form>
+                                    <input
+                                        type="submit"
+                                        className="button-form"
+                                        value="Suscribirse"
+                                    />
+                                </div>
 
                                 <div className={styles.description_container}>
                                     <p>
