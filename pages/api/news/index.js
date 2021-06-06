@@ -43,11 +43,11 @@ const handler = nc()
                     </td>
                 </tr>
                 <tr>
-                    <td class="notify-news" style="display: block;text-align: center;"><h2 style="color: #4d4d4d;font-size: 1.5em;text-align: center;margin: 15px 0;">Nueva publicación</h2></td>
+                    <td class="notify-news" style="display: block;text-align: center;"><h2 style="color: #4d4d4d;font-size: 1.6em;text-align: center;margin: 15px 0;">Nueva publicación</h2></td>
                 </tr>
                 <tr>
                     <td class="news-title-container" style="display: block;text-align: center;">
-                        <span style="font-weight: 600;font-size: 1em;color: #2d2d2d;margin: 10px;">${savedNews.title}</span>
+                        <span style="font-weight: 600;font-size: 1.1em;color: #2d2d2d;margin: 10px;">${savedNews.title}</span>
                     </td>
                 </tr>
                 <tr>
@@ -57,7 +57,7 @@ const handler = nc()
                 </tr>
                 <tr>
                     <td class="news-description-container" style="display: block;text-align: center;">
-                        <p style="display: inline-block;width: fit-content;font-size: 0.95em;text-align: justify;text-justify: newspaper;margin: 6px;">
+                        <p style="display: inline-block;width: fit-content;font-size: 1em;text-align: justify;text-justify: newspaper;margin: 6px;">
                         ${savedNews.description}
                         </p>
                     </td>
@@ -72,24 +72,27 @@ const handler = nc()
 
             //Get all people suscribed to news
             const suscribers = await Suscriber.find({}).select('email')
+            const emailList = []
+
+            for (let i = 0; i < suscribers.length; i++) {
+                emailList.push(suscribers[i].email)
+            }
 
             //Count each people suscribed and send email to them
-            for (let i = 0; i < suscribers.length; i++) {
-                sendMail(
-                    suscribers[i].email,
-                    'Nueva noticia en Hogar Escuela Nueva Esperanza',
-                    content,
-                    (err, data) => {
-                        if (err) {
-                            console.log(err)
-                            res.send('error' + JSON.stringify(err))
-                        }
-                        console.log('mail send')
-                        res.status(200)
-                        res.send('success')
+            sendMail(
+                emailList,
+                'Nueva noticia en Hogar Escuela Nueva Esperanza',
+                content,
+                (err, data) => {
+                    if (err) {
+                        console.log(err)
+                        res.send('error' + JSON.stringify(err))
                     }
-                )
-            }
+                    console.log('mail send')
+                    res.status(200)
+                    res.send('success')
+                }
+            )
         } catch (err) {
             console.log(err)
             res.status(400).json({ success: false })
