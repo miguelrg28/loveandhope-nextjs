@@ -43,11 +43,11 @@ const handler = nc()
                     </td>
                 </tr>
                 <tr>
-                    <td class="notify-news" style="display: block;text-align: center;"><h2 style="color: #4d4d4d;font-size: 1.3em;text-align: center;margin: 15px 0;">Nueva publicación</h2></td>
+                    <td class="notify-news" style="display: block;text-align: center;"><h2 style="color: #4d4d4d;font-size: 1.5em;text-align: center;margin: 15px 0;">Nueva publicación</h2></td>
                 </tr>
                 <tr>
                     <td class="news-title-container" style="display: block;text-align: center;">
-                        <span style="font-weight: 600;font-size: 0.95em;color: #2d2d2d;margin: 10px;">${savedNews.title}</span>
+                        <span style="font-weight: 600;font-size: 1em;color: #2d2d2d;margin: 10px;">${savedNews.title}</span>
                     </td>
                 </tr>
                 <tr>
@@ -57,7 +57,7 @@ const handler = nc()
                 </tr>
                 <tr>
                     <td class="news-description-container" style="display: block;text-align: center;">
-                        <p style="display: inline-block;width: fit-content;font-size: 0.9em;text-align: justify;text-justify: newspaper;margin: 6px;">
+                        <p style="display: inline-block;width: fit-content;font-size: 0.95em;text-align: justify;text-justify: newspaper;margin: 6px;">
                         ${savedNews.description}
                         </p>
                     </td>
