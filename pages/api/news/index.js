@@ -78,6 +78,8 @@ const handler = nc()
                 emailList.push(suscribers[i].email)
             }
 
+            console.log(emailList)
+
             //Count each people suscribed and send email to them
             sendMail(
                 emailList,
