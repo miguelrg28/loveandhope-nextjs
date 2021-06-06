@@ -39,26 +39,33 @@ const handler = nc()
             <table style="border: 2.5px solid #f1f1f1;font-family: Montserrat, 'sans-serif';width: 100%;padding: 10px;">
                 <tr>
                     <td class="img-container" style="display: block;text-align: center;">
-                        <img src="#" alt="" style="width: 375px;margin-bottom: 10px;">
+                        <img src="https://henuevaesperanza.vercel.app/logo.jpg" alt="" style="width: 375px;margin-bottom: 10px;">
                     </td>
                 </tr>
                 <tr>
-                    <td class="notify-news" style="display: block;text-align: center;"><h2 style="color: #6d6d6d;font-size: 1.3em;text-align: center;margin: 15px 0;">Nueva noticia publicada</h2></td>
+                    <td class="notify-news" style="display: block;text-align: center;"><h2 style="color: #4d4d4d;font-size: 1.3em;text-align: center;margin: 15px 0;">Nueva publicación</h2></td>
                 </tr>
                 <tr>
                     <td class="news-title-container" style="display: block;text-align: center;">
-                        <span style="font-weight: 600;font-size: 1em;color: #2d2d2d;margin: 10px;">${savedNews.title}</span>
+                        <span style="font-weight: 600;font-size: 0.95em;color: #2d2d2d;margin: 10px;">${savedNews.title}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="news-image-container" style="display: block;text-align: center;margin: 10px;">
+                        <img src="${savedNews.img}" alt="" style="display: block;margin-left: auto;margin-right: auto;height: 300px;">
                     </td>
                 </tr>
                 <tr>
                     <td class="news-description-container" style="display: block;text-align: center;">
-                        <p style="display: inline-block;width: fit-content;font-size: 0.95em;text-align: justify;color: #000;text-justify: newspaper;margin: 6px;">
-                            ${savedNews.description}
+                        <p style="display: inline-block;width: fit-content;font-size: 0.9em;text-align: justify;text-justify: newspaper;margin: 6px;">
+                        ${savedNews.description}
                         </p>
                     </td>
                 </tr>
                 <tr>
-                    <td style="display: block;text-align: center;"><a href="#" style="-webkit-appearance: none;-moz-appearance: none;margin-top: 6px;appearance: none;padding: 12px;font-family: 'Montserrat', sans-serif;border: none;outline: none;background-color: #1a72e7;font-weight: 500;font-size: 0.9em;text-decoration: none;display: inline-block;color: #fff;width: fit-content;cursor: pointer;border-radius: 3px;-webkit-transition: 0.3s;-o-transition: 0.3s;transition: 0.3s;">Ir hacia página web</a></td>
+                    <td style="display: block;text-align: center;">
+                        <a href="https://henuevaesperanza.vercel.app/#news" style="-webkit-appearance: none;-moz-appearance: none;margin-top: 6px;appearance: none;padding: 12px;font-family: 'Montserrat', sans-serif;border: none;outline: none;background-color: #1a72e7;font-weight: 500;font-size: 0.85em;text-decoration: none;display: inline-block;color: #fff;width: fit-content;cursor: pointer;border-radius: 3px;-webkit-transition: 0.3s;-o-transition: 0.3s;transition: 0.3s;">Ir hacia página web</a>
+                    </td>
                 </tr>
             </table>
         </div>`

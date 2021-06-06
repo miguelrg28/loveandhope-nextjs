@@ -61,7 +61,7 @@ export default function Home({ MainSlides, NewsSlides }) {
                     </Link>
                 </div>
 
-                <div className={styles.news_container}>
+                <div className={styles.news_container} id="news">
                     <span>Noticias</span>
                     <div>
                         <Slider items={NewsSlides} arrows={true} />
