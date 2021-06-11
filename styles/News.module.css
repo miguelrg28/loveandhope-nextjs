@@ -76,7 +76,7 @@
 .decoration {
     grid-area: decoration;
     max-width: 46px;
-    border: thin solid #292c2f;
+    border: thin solid #cecfd3;
 }
 
 .cover_container {
