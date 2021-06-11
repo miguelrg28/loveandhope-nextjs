@@ -3,11 +3,12 @@ import styles from '../../styles/News.module.css'
 import axios from 'axios'
 import {
     AiOutlineFacebook,
-    AiOutlineInstagram,
+    AiOutlineShareAlt,
     AiOutlineWhatsApp,
     AiOutlineTwitter,
 } from 'react-icons/ai'
-import { convertDateToString } from '@/utils/hooks'
+import { convertDateToString, copyToClipboard } from '@/utils/hooks'
+import swal from 'sweetalert2'
 import { useEffect, useState } from 'react'
 
 export async function getServerSideProps({ query }) {
@@ -21,6 +22,28 @@ export async function getServerSideProps({ query }) {
 
 export default function News({ news }) {
     const [shareMessage, setShareMessage] = useState('')
+
+    const shareOption = () => {
+        if (navigator.share)
+            navigator.share({
+                title: `${news.title} - Hogar Escuela Nueva Esperanza`,
+                url: window.location.href,
+            })
+        else {
+            swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Copiado al portapapeles',
+                html: '<p>¡Puedes compartir este link a cualquier persona!</p>',
+                showConfirmButton: false,
+                timer: 1000,
+            }).then((result) => {
+                if (result) {
+                    copyToClipboard(shareMessage)
+                }
+            })
+        }
+    }
 
     useEffect(() => {
         setShareMessage(`${news.title} - Hogar Escuela Nueva Esperanza \n${window.location.href}`)
@@ -53,26 +76,32 @@ export default function News({ news }) {
                 <div className={styles.share_container}>
                     <span>Compartir artículo</span>
                     <div className={styles.share_options}>
-                        <button className="social-button ligth">
-                            <AiOutlineInstagram />
-                        </button>
                         <a
                             target="_blank"
                             rel="noopener noreferrer"
+                            style={{ textDecoration: 'none', color: '#878d9b' }}
                             href={`https://twitter.com/intent/tweet?text=${shareMessage}`}
                         >
-                            <button
-                                className="social-button ligth"
-                                style={{ textDecoration: 'none', color: '#878d9b' }}
-                            >
+                            <button className="social-button ligth">
                                 <AiOutlineTwitter />
                             </button>
                         </a>
-                        <button className="social-button ligth">
-                            <AiOutlineWhatsApp />
-                        </button>
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: 'none', color: '#878d9b' }}
+                            href={`whatsapp://send?text=${shareMessage}`}
+                            data-action="share/whatsapp/share"
+                        >
+                            <button className="social-button ligth">
+                                <AiOutlineWhatsApp />
+                            </button>
+                        </a>
                         <button className="social-button ligth">
                             <AiOutlineFacebook />
+                        </button>
+                        <button className="social-button ligth" onClick={shareOption}>
+                            <AiOutlineShareAlt />
                         </button>
                     </div>
                 </div>
