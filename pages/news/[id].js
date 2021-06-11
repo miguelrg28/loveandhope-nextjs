@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import styles from '../../styles/News.module.css'
 import axios from 'axios'
 import {
@@ -9,6 +8,7 @@ import {
     AiOutlineTwitter,
 } from 'react-icons/ai'
 import { convertDateToString } from '@/utils/hooks'
+import { useEffect, useState } from 'react'
 
 export async function getServerSideProps({ query }) {
     try {
@@ -20,7 +20,11 @@ export async function getServerSideProps({ query }) {
 }
 
 export default function News({ news }) {
-    const router = useRouter()
+    const [shareMessage, setShareMessage] = useState('')
+
+    useEffect(() => {
+        setShareMessage(`${news.title} - Hogar Escuela Nueva Esperanza \n${window.location.href}`)
+    }, [])
     return (
         <>
             <Head>
@@ -55,7 +59,7 @@ export default function News({ news }) {
                         <a
                             target="_blank"
                             rel="noopener noreferrer"
-                            href={`https://twitter.com/intent/tweet?text=${news.title} - Hogar Escuela Nueva Esperanza \n${window.location.href}`}
+                            href={`https://twitter.com/intent/tweet?text=${shareMessage}`}
                         >
                             <button
                                 className="social-button ligth"
