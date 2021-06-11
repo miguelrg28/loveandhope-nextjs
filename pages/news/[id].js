@@ -1,10 +1,12 @@
+import Head from 'next/head'
+import { useRouter } from 'next/router'
 import styles from '../../styles/News.module.css'
 import axios from 'axios'
 import {
     AiOutlineFacebook,
     AiOutlineInstagram,
+    AiOutlineWhatsApp,
     AiOutlineTwitter,
-    AiFillYoutube,
 } from 'react-icons/ai'
 import { convertDateToString } from '@/utils/hooks'
 
@@ -18,9 +20,13 @@ export async function getServerSideProps({ query }) {
 }
 
 export default function News({ news }) {
+    const router = useRouter()
     return (
         <>
-            <div class={styles.container}>
+            <Head>
+                <title>{news.title} - Hogar Escuela Nueva Esperanza</title>
+            </Head>
+            <div className={styles.container}>
                 <div className={styles.date_container}>
                     <span>{convertDateToString(news.createdAt)}</span>
                 </div>
@@ -46,11 +52,20 @@ export default function News({ news }) {
                         <button className="social-button ligth">
                             <AiOutlineInstagram />
                         </button>
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={`https://twitter.com/intent/tweet?text=${news.title} - Hogar Escuela Nueva Esperanza \n${window.location.href}`}
+                        >
+                            <button
+                                className="social-button ligth"
+                                style={{ textDecoration: 'none', color: '#878d9b' }}
+                            >
+                                <AiOutlineTwitter />
+                            </button>
+                        </a>
                         <button className="social-button ligth">
-                            <AiOutlineTwitter />
-                        </button>
-                        <button className="social-button ligth">
-                            <AiFillYoutube />
+                            <AiOutlineWhatsApp />
                         </button>
                         <button className="social-button ligth">
                             <AiOutlineFacebook />
