@@ -13,12 +13,14 @@
         'sub-decoration-two'
         'share';
     gap: 20px;
+    width: 100%;
 }
 
 .container > div {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .container > hr {
@@ -74,7 +76,7 @@
 .decoration {
     grid-area: decoration;
     max-width: 46px;
-    border: thin solid #cfd0d4;
+    border: thin solid #292c2f;
 }
 
 .cover_container {
@@ -83,7 +85,8 @@
 }
 
 .cover_container > img {
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
 }
 
 .sub_decoration {
