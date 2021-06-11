@@ -57,6 +57,49 @@ a {
     max-width: 275px;
 }
 
+.social-button {
+    appearance: none;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 8px;
+    transition: 0.3s;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.social-button.ligth {
+    background: #f6f6f6;
+    color: #878d9b;
+}
+
+.social-button.ligth:hover {
+    background-color: #1b1b1b1a;
+}
+
+.social-button.ligth:active {
+    background-color: #1b1b1b2f;
+}
+
+.social-button.dark {
+    background: #33383b;
+    color: #fff;
+}
+
+.social-button.dark:hover {
+    background-color: #404649;
+}
+.social-button.dark:active {
+    background-color: #2e3336;
+}
+
+.social-button svg {
+    font-size: 1.6em;
+}
+
 .button-form {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -142,5 +185,17 @@ input[type='text']:focus {
         -webkit-transition: 0.3s;
         -o-transition: 0.3s;
         transition: 0.3s;
+    }
+
+    .social-button {
+        cursor: default !important;
+    }
+
+    .social-button.dark:hover {
+        background: #33383b !important;
+    }
+
+    .social-button.dark:active {
+        background-color: #2e3336 !important;
     }
 }

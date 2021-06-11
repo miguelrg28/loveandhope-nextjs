@@ -6,7 +6,7 @@ const NewsSchema = new mongoose.Schema(
         title: { type: String, required: [true, 'Debe añadir el titulo'] },
         img: { type: String, required: [true, 'Debe añadir la imágen'] },
         description: { type: String, required: [true, 'Debe añadir una descripción'] },
-        urlToGo: { type: String },
+        author: { ref: 'User', type: mongoose.Schema.Types.ObjectId },
     },
     {
         timestamps: true,

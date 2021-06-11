@@ -20,13 +20,13 @@ const handler = nc()
     .use(VerifyToken)
     .post(async (req, res) => {
         try {
-            const { title, img, description, urlToGo } = req.body
+            const { title, img, description } = req.body
 
             const newNews = new News({
                 title,
                 img,
                 description,
-                urlToGo,
+                author: req.userId,
             })
 
             const savedNews = await newNews.save()

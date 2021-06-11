@@ -1,8 +1,9 @@
+import Link from 'next/link'
 import Carousel from 'react-elastic-carousel'
 import Arrows from './Arrows'
 import Dot from './Dot'
 
-const Slider = ({ items, arrows, autoPlay }) => (
+const Slider = ({ news = false, items, arrows, autoPlay }) => (
     <>
         <Carousel
             enableAutoPlay={autoPlay}
@@ -29,8 +30,13 @@ const Slider = ({ items, arrows, autoPlay }) => (
         >
             {items.map((item, index) => (
                 <div key={index} className="item">
-                    <img src={item.img} title={item.title} />
-                    {/*item.description && <div className="text">{item.description}</div>*/}
+                    {news ? (
+                        <Link href={`/news/${item._id}`}>
+                            <img src={item.img} title={item.title} style={{ cursor: 'pointer' }} />
+                        </Link>
+                    ) : (
+                        <img src={item.img} title={item.title} />
+                    )}
                 </div>
             ))}
         </Carousel>
@@ -44,12 +50,6 @@ const Slider = ({ items, arrows, autoPlay }) => (
                 text-align: center;
                 outline: none;
                 color: #fff;
-                /*background-image: url('/background1.jpg');
-                background-color: #673ab7;
-                background-position-x: center;
-                background-position-y: center;
-                background-repeat: no-repeat;
-                background-size: cover;*/
             }
 
             .item > img {

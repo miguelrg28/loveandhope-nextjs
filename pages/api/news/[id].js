@@ -11,7 +11,7 @@ const handler = nc()
             query: { id },
         } = req
         try {
-            const foundNews = await News.findById(id)
+            const foundNews = await News.findById(id).populate('author', 'fullName')
 
             if (!foundNews) {
                 return res.status(400).json({ success: false })

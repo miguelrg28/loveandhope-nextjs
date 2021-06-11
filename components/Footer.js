@@ -13,7 +13,9 @@ const Footer = () => (
             <div className="right">
                 {SocialMedia.map((button) => (
                     <a target="_blank" rel="noopener noreferrer" href={button.url} key={button.id}>
-                        <button title={button.name}>{button.icon}</button>
+                        <button className="social-button dark" title={button.name}>
+                            {button.icon}
+                        </button>
                     </a>
                 ))}
             </div>
@@ -30,35 +32,8 @@ const Footer = () => (
                 color: #fff;
             }
 
-            footer button {
-                appearance: none;
-                border: none;
-                outline: none;
-                background: #33383b;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: #fff;
-                padding: 8px;
-                transition: 0.3s;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-
             footer a:not(:last-child) {
                 margin-right: 16px;
-            }
-
-            footer button:hover {
-                background-color: #404649;
-            }
-
-            footer button:active {
-                background-color: #2e3336;
-            }
-
-            footer button > :global(svg) {
-                font-size: 1.6em;
             }
 
             footer > .left {
@@ -90,20 +65,6 @@ const Footer = () => (
                 width: 100%;
                 justify-content: flex-end;
                 align-items: center;
-            }
-
-            @media only screen and (max-width: 768px) {
-                footer button {
-                    cursor: default !important;
-                }
-
-                footer button:hover {
-                    background: #33383b !important;
-                }
-
-                footer button:active {
-                    background-color: #2e3336 !important;
-                }
             }
         `}</style>
     </>
