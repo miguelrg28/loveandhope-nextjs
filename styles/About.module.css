@@ -19,6 +19,7 @@
 .container img {
     width: 350px;
     margin-bottom: 30px;
+    cursor: pointer;
 }
 
 .sections_container {

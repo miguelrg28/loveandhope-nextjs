@@ -1,10 +1,13 @@
+import Link from 'next/link'
 import TextSection from '@/components/TextSection'
 import styles from '../styles/About.module.css'
 
 export default function About() {
     return (
         <div className={styles.container}>
-            <img src="/logo.jpg" alt="Logo" />
+            <Link href="/">
+                <img src="/logo.jpg" alt="Logo" />
+            </Link>
             <div className={styles.sections_container}>
                 <TextSection
                     className={styles.our_story}
